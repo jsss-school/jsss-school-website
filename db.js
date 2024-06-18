@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 import env from "dotenv"
 let dbConnection;
 env.config()
-// const url = 'mongodb://127.0.0.1:27017/agsss-filename'
+
 const url = process.env.MONGO_ATLAS_URL
 export async function connectToDb(cb) {
     try {
