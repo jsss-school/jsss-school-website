@@ -15,7 +15,8 @@ env.config()
 
 
 const PASSWORD = process.env.PASSWORD
-const EMAIL = process.env.EMAIL
+const FROM_EMAIL = process.env.FROM_EMAIL
+const TO_EMAIL = process.env.TO_MAIL
 
 
 // Connect to the database before setting up the routes
@@ -46,16 +47,16 @@ const sendMail = async (message, form) => {
   let transporter = nodemailer.createTransport({
       service: 'Gmail', // Use your email service provider
       auth: {
-          user: EMAIL, // Your email
+          user: FROM_EMAIL, // Your email
           pass: PASSWORD // Your email password
       }
   });
 
   // Define email options
   let mailOptions = {
-      from: EMAIL, // Sender address
-      to: EMAIL, // List of receivers
-      subject: `New Message from ${form}`, // Subject line
+      from: FROM_EMAIL, // Sender address
+      to: TO_EMAIL, // List of receivers
+      subject: `${form} School Website`, // Subject line
       text: message, // Plain text body
   };
 
