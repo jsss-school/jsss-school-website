@@ -28,7 +28,7 @@ connectToDb((err) => {
       // Set up your Express routes inside this callback
       app.get("/documents", async (req, res) => {
           try {
-              const filenames = await db.collection('test').find({}).sort({ _id: -1 }).toArray();
+              const filenames = await db.collection('filenames').find({}).sort({ _id: -1 }).toArray();
               console.log(filenames);
               res.render("documents.ejs", { filenames:filenames });
           } catch (error) {
