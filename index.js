@@ -110,6 +110,10 @@ app.get("/gallery", (req, res) => {
   res.render("gallery.ejs");
 });
 
+app.get("/cronjob", (req, res) => {
+  res.send("Hello!");
+});
+
 
 
 
